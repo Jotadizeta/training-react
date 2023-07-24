@@ -1,17 +1,13 @@
-// import './App.css';
+import './App.css';
+import Title from "./components/Title";
+import Paragraph from "./components/Paragraph";
 
 function App() {
   return (
-    <div>
-      <h1>Hello World!</h1>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio,
-        deleniti distinctio vero maiores rerum delectus ipsum sint quibusdam a
-        modi repellat ducimus hic nam totam quisquam ex eveniet aliquam aut
-        voluptates, tempora exercitationem perspiciatis. Eaque amet deserunt,
-        quam, perspiciatis nesciunt numquam illo facilis, quaerat nobis quos
-        repudiandae ipsum rem consequatur.
-      </p>
+    <div className="main">
+      <Title></Title>
+      <Paragraph></Paragraph>
+      <Paragraph></Paragraph>
     </div>
   );
 }
