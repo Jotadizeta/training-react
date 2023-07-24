@@ -1,13 +1,12 @@
-import './App.css';
-import Title from "./components/Title";
-import Paragraph from "./components/Paragraph";
+import "./App.css";
+import Welcome from "./components/Welcome";
 
 function App() {
   return (
     <div className="main">
-      <Title></Title>
-      <Paragraph></Paragraph>
-      <Paragraph></Paragraph>
+      <Welcome name="Laura"></Welcome>
+      <Welcome name="Jane"></Welcome>
+      <Welcome name="World"></Welcome>
     </div>
   );
 }
