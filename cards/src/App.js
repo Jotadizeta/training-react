@@ -1,18 +1,58 @@
-// import './App.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar, faEnvelope, faDollarSign, faAddressBook, faPhoneFlip, faCircleCheck } from "@fortawesome/free-solid-svg-icons";
+import "./App.css";
+import CardWrapper from "./components/CardWrapper";
+import freelancer1 from "./assets/img/freelancer-1.jpg";
 
 function App() {
   return (
-    <div>
-      <h1>Hello World!</h1>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio,
-        deleniti distinctio vero maiores rerum delectus ipsum sint quibusdam a
-        modi repellat ducimus hic nam totam quisquam ex eveniet aliquam aut
-        voluptates, tempora exercitationem perspiciatis. Eaque amet deserunt,
-        quam, perspiciatis nesciunt numquam illo facilis, quaerat nobis quos
-        repudiandae ipsum rem consequatur.
-      </p>
-    </div>
+    <CardWrapper>
+      <div className="img-container">
+        <div className="img-wrapper">
+          <img src={freelancer1} alt="freelance-one" />
+          <span className="dot"></span>
+        </div>
+      </div>
+      <div className="info-container">
+        <h3>MR ROBERT</h3>
+        <p>UI-UX DESIGN</p>
+        <div className="hire">
+          <div>
+            Rate: <span>$85/hr</span>
+          </div>
+          <button className="hire-button">Hire Me</button>
+        </div>
+        <div className="rating">
+          <div>5.0</div>
+          <div>
+            <FontAwesomeIcon icon={faStar} />
+            <FontAwesomeIcon icon={faStar} />
+            <FontAwesomeIcon icon={faStar} />
+            <FontAwesomeIcon icon={faStar} />
+            <FontAwesomeIcon icon={faStar} />
+          </div>
+          <div>(105 Reviews)</div>
+        </div>
+        <div className="icons">
+          <div className="verified">
+            <FontAwesomeIcon icon={faCircleCheck} />
+            <span>Verified</span>
+          </div>
+          <span>
+            <FontAwesomeIcon icon={faDollarSign} />
+          </span>
+          <span>
+            <FontAwesomeIcon icon={faEnvelope} />
+          </span>
+          <span>
+            <FontAwesomeIcon icon={faAddressBook} />
+          </span>
+          <span>
+          <FontAwesomeIcon icon={faPhoneFlip}/>
+          </span>
+        </div>
+      </div>
+    </CardWrapper>
   );
 }
 
