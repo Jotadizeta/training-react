@@ -1,15 +1,7 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faStar,
-  faEnvelope,
-  faDollarSign,
-  faAddressBook,
-  faPhoneFlip,
-  faCircleCheck,
-} from "@fortawesome/free-solid-svg-icons";
 import "./App.css";
 import CardWrapper from "./components/CardWrapper";
-import freelancer1 from "./assets/img/freelancer-1.jpg";
+import CardImg from "./components/CardImg";
+import CardInfo from "./components/CardInfo";
 
 function App() {
   const freelancer = [
@@ -26,51 +18,8 @@ function App() {
   return (
     <div className="card-container">
       <CardWrapper>
-        <div className="img-container">
-          <div className="img-wrapper">
-            <img src={freelancer1} alt="freelance-one" />
-            <span className="dot"></span>
-          </div>
-        </div>
-        <div className="info-container">
-          <h3>MR ROBERT</h3>
-          <p>UI-UX DESIGN</p>
-          <div className="hire">
-            <div>
-              Rate: <span className="price">$85/hr</span>
-            </div>
-            <button className="hire-button">Hire Me</button>
-          </div>
-          <div className="rating">
-            <div>5.0</div>
-            <div>
-              <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={faStar} />
-            </div>
-            <div>(105 Reviews)</div>
-          </div>
-          <div className="icons">
-            <div className="verified">
-              <FontAwesomeIcon icon={faCircleCheck} />
-              <span>Verified</span>
-            </div>
-            <span className="circle avaiable">
-              <FontAwesomeIcon icon={faDollarSign} />
-            </span>
-            <span className="circle avaiable">
-              <FontAwesomeIcon icon={faEnvelope} />
-            </span>
-            <span className="circle not-avaiable">
-              <FontAwesomeIcon icon={faAddressBook} />
-            </span>
-            <span className="circle not-avaiable">
-              <FontAwesomeIcon icon={faPhoneFlip} />
-            </span>
-          </div>
-        </div>
+        <CardImg></CardImg>
+        <CardInfo></CardInfo>
       </CardWrapper>
     </div>
   );
