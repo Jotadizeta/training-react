@@ -2,26 +2,21 @@ import "./App.css";
 import CardWrapper from "./components/CardWrapper";
 import CardImg from "./components/CardImg";
 import CardInfo from "./components/CardInfo";
+import { freelancers } from "./db/freelancers";
+import CardsContainer from "./components/CardsContainer";
 
 function App() {
-  const freelancer = [
-    {
-      id: 0,
-      tittle: "MR",
-      lastName: "ROBERT",
-      role: "UX/UI Designer",
-      fee: 85,
-      reviews: 105,
-    },
-  ];
-
   return (
-    <div className="card-container">
-      <CardWrapper>
-        <CardImg></CardImg>
-        <CardInfo></CardInfo>
-      </CardWrapper>
-    </div>
+    <CardsContainer>
+      {freelancers.map((freelancer) => {
+        return (
+          <CardWrapper key={freelancer.id}>
+            <CardImg freelancer={freelancer}></CardImg>
+            <CardInfo freelancer={freelancer}></CardInfo>
+          </CardWrapper>
+        );
+      })}
+    </CardsContainer>
   );
 }
 
