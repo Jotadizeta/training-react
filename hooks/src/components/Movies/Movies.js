@@ -1,6 +1,9 @@
-import './Movies.css';
+import "./Movies.css";
 import { useState } from "react";
-import movies from "../db/movies.json";
+import movies from "../../db/movies.json";
+import MoviesWrapper from "./MoviesWrapper";
+import MoviesMain from "./MoviesMain";
+import Cards from "./Cards";
 
 function Movies() {
   const [moviesList, setMoviesList] = useState(movies);
@@ -20,21 +23,18 @@ function Movies() {
   const noFilter = () => setMoviesList(movies);
 
   return (
-    <div className="main">
+    <MoviesMain>
       <div className="actions">
         <button onClick={noFilter}>All</button>
         <button onClick={filterComedy}>Comedy</button>
         <button onClick={filterDrama}>Drama</button>
       </div>
-      <div className="movies-wrapper">
+      <MoviesWrapper>
         {moviesList.map((movie) => (
-          <div key={movie.id} className="card">
-            <h2>{movie.title}</h2>
-            <h3>{movie.genre}</h3>
-          </div>
+          <Cards key={movie.id} movie={movie}/>
         ))}
-      </div>
-    </div>
+      </MoviesWrapper>
+    </MoviesMain>
   );
 }
 
