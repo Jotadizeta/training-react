@@ -1,4 +1,4 @@
-import "./Person.css";
+// import "./Person.css";
 import { useState } from "react";
 
 function Person() {

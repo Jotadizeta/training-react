@@ -1,4 +1,4 @@
-import "./Timer.css";
+// import "./Timer.css";
 import { useState, useEffect } from "react";
 
 function Timer() {

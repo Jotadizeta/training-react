@@ -1,4 +1,4 @@
-import "./App.css";
+// import "./App.css";
 import Person from "./Person";
 import ShowCounter from "./ShowCounter";
 import { useState } from "react";
