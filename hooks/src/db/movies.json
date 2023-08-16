@@ -1,0 +1,81 @@
+[{
+    "id": 1,
+    "title": "Eagle vs Shark",
+    "genre": "Comedy"
+  }, {
+    "id": 2,
+    "title": "Crimes Against Humanity",
+    "genre": "Comedy"
+  }, {
+    "id": 3,
+    "title": "Black Rainbow",
+    "genre": "Thriller"
+  }, {
+    "id": 4,
+    "title": "CB4 - The Movie",
+    "genre": "Comedy"
+  }, {
+    "id": 5,
+    "title": "Wooden Bridge, The",
+    "genre": "Drama|Romance"
+  }, {
+    "id": 6,
+    "title": "When in Rome",
+    "genre": "Comedy|Romance"
+  }, {
+    "id": 7,
+    "title": "Wrong Turn 2: Dead End",
+    "genre": "Action|Horror|Thriller"
+  }, {
+    "id": 8,
+    "title": "Truth About Cats & Dogs, The",
+    "genre": "Comedy|Romance"
+  }, {
+    "id": 9,
+    "title": "Californie, La",
+    "genre": "Drama"
+  }, {
+    "id": 10,
+    "title": "Mélo",
+    "genre": "Drama|Romance"
+  }, {
+    "id": 11,
+    "title": "Sleeping with Other People",
+    "genre": "Comedy"
+  }, {
+    "id": 12,
+    "title": "Honeysuckle Rose (a.k.a. On the Road Again)",
+    "genre": "Drama|Romance"
+  }, {
+    "id": 13,
+    "title": "Endgame",
+    "genre": "Drama"
+  }, {
+    "id": 14,
+    "title": "This Man Must Die (Que la bête meure)",
+    "genre": "Crime|Drama|Thriller"
+  }, {
+    "id": 15,
+    "title": "Citizen Koch",
+    "genre": "Documentary"
+  }, {
+    "id": 16,
+    "title": "Sound and the Fury, The",
+    "genre": "Drama|Romance"
+  }, {
+    "id": 17,
+    "title": "Makai Tensho: Samurai Reincarnation (Makai tenshô)",
+    "genre": "Action|Fantasy|Horror"
+  }, {
+    "id": 18,
+    "title": "Wonderful World of the Brothers Grimm, The",
+    "genre": "Adventure|Animation|Children|Comedy|Drama|Fantasy|Musical|Romance"
+  }, {
+    "id": 19,
+    "title": "Asterix in Britain (Astérix chez les Bretons)",
+    "genre": "Adventure|Animation|Children|Comedy"
+  }, {
+    "id": 20,
+    "title": "India's Daughter",
+    "genre": "Documentary"
+  }]
