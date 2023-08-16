@@ -7,20 +7,32 @@ import Cards from "./Cards";
 
 function Movies() {
   const [moviesList, setMoviesList] = useState(movies);
+  const [fadeIn, setFadeIn] = useState(true);
+
+  const changeVisibility = (toShow) => {
+    setFadeIn(false);
+    setTimeout(() => {
+      setFadeIn(true);
+      setMoviesList(toShow);
+    }, 500);
+  };
 
   const filterComedy = () => {
     let comedyMovies = movies.filter((movie) => {
       return movie.genre.includes("Comedy");
     });
-    setMoviesList(comedyMovies);
+    changeVisibility(comedyMovies);
   };
   const filterDrama = () => {
     let dramaMovies = movies.filter((movie) => {
       return movie.genre.includes("Drama");
     });
-    setMoviesList(dramaMovies);
+    changeVisibility(dramaMovies);
   };
-  const noFilter = () => setMoviesList(movies);
+  const noFilter = () => {
+    setMoviesList(movies);
+    changeVisibility(movies);
+  };
 
   return (
     <MoviesMain>
@@ -31,7 +43,7 @@ function Movies() {
       </div>
       <MoviesWrapper>
         {moviesList.map((movie) => (
-          <Cards key={movie.id} movie={movie}/>
+          <Cards key={movie.id} movie={movie} fadeIn={fadeIn} />
         ))}
       </MoviesWrapper>
     </MoviesMain>

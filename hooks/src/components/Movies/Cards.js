@@ -1,17 +1,14 @@
-import './Cards.css';
+import "./Cards.css";
 
 function Cards(props) {
-
-    const formatGenre=()=>{
-        return props.movie.genre.replace("|"," | ");
-    }
-
-
+  const formatGenre = () => {
+    return props.movie.genre.replace("|", " | ");
+  };
   return (
-    <div className="card">
-            <h2>{props.movie.title}</h2>
-            <h3>{formatGenre()}</h3>
-          </div>
+    <div className={`card ${props.fadeIn && "fade-in"}`}>
+      <h2>{props.movie.title}</h2>
+      <h3>{formatGenre()}</h3>
+    </div>
   );
 }
 
