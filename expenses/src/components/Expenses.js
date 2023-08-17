@@ -10,7 +10,6 @@ import {
   faBriefcase,
   faCommentDollar,
   faSackDollar,
-  faArrowsUpDown,
 } from "@fortawesome/free-solid-svg-icons";
 
 function Expenses() {
@@ -33,7 +32,7 @@ function Expenses() {
           <h2>Food And Drinks</h2>
           <small className="expense-date">24/08/21</small>
         </div>
-        <div className="item-cost flex-20 income fa-3x flex-center">
+        <div className="item-cost flex-20 expense fa-3x flex-center">
           <span>&#8722; $20</span>
           <FontAwesomeIcon icon={faArrowDownLong} className="m-left-20" />
         </div>
@@ -77,7 +76,7 @@ function Expenses() {
           <h2>Send Bizum to a Friend</h2>
           <small className="expense-date">01/09/21</small>
         </div>
-        <div className="item-cost flex-20 income fa-3x flex-center">
+        <div className="item-cost flex-20 expense fa-3x flex-center">
           <span>&#8722; $50</span>
           <FontAwesomeIcon icon={faArrowDownLong} className="m-left-20" />
         </div>
