@@ -1,6 +1,7 @@
 :root {
   box-sizing: border-box;
   font-size: 0.785em;
+  --bg-color: #f7f8fc;
 }
 
 *,
@@ -15,6 +16,9 @@
 
 body {
   font-family: "Rubik", sans-serif;
+  background-color: var(--bg-color);
+  width: 100vw;
+  min-height: 100vh;
 }
 
 h1,
@@ -43,4 +47,10 @@ h5 {
 }
 h6 {
   font-size: 0.7rem;
+}
+
+.flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
