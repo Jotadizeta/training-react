@@ -1,26 +1,20 @@
 import "./Expenses.css";
-
-import {
-  faChampagneGlasses,
-  faSquare,
-  faBurger,
-  faGlassWater,
-  faArrowDownLong,
-  faArrowUpLong,
-  faBriefcase,
-  faCommentDollar,
-  faSackDollar,
-} from "@fortawesome/free-solid-svg-icons";
-
+import ItemIcon from "./items/ItemIcon";
+import ItemInfo from "./items/ItemInfo";
+import ItemCost from "./items/ItemCost";
+import { itemsList } from "../itemsDB/items";
+import ItemContainer from "./wrappers/ItemContainer";
+import Wrapper from "./wrappers/Wrapper";
 
 function Expenses() {
   return (
-    <div className="wrapper">
+    <Wrapper>
       {/* item 1*/}
-      <div className="item-container">
-
-        
-      </div>
+      <ItemContainer>
+        <ItemIcon icons={itemsList[0].icons} />
+        <ItemInfo data={itemsList[0].data} />
+        <ItemCost money={itemsList[0].money} />
+      </ItemContainer>
       {/* item 2*/}
       {/* <div className="item-container">
         <div className="item-icon fa-4x flex-20 flex-center">
@@ -116,7 +110,7 @@ function Expenses() {
         </div>
       </div> */}
       {/* final items */}
-    </div>
+    </Wrapper>
   );
 }
 
