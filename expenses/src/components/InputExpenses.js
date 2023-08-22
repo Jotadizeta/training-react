@@ -1,17 +1,47 @@
 import "./InputExpenses.css";
 import Wrapper from "./wrappers/Wrapper";
+import { useState } from "react";
 
 function InputExpenses() {
+  const [expense, setNewExpense] = useState({
+    title: "",
+    amount: 0,
+    category: "incoming",
+    isIncome: false,
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("submitted");
+  };
+
+  const hanleInputChange = (e) => {
+    const target = e.target;
+    const value = target.type === "checkbox" ? target.checked : target.value;
+    const name =target.name
+
+    setNewExpense({
+      ...expense,
+      [name]:value
+    });
+  };
+
   return (
     <Wrapper
       content={
-        <form className="new-expense">
+        <form className="new-expense" onSubmit={handleSubmit}>
           <h2>Input Expense</h2>
           <div className="form-container">
             <label htmlFor="title">
               <h3>Title</h3>
             </label>
-            <input type="text" name="title" id="title"></input>
+            <input
+              onChange={hanleInputChange}
+              value={expense.title}
+              type="text"
+              name="title"
+              id="title"
+            ></input>
           </div>
           <div className="form-container">
             <label htmlFor="amount">
