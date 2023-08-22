@@ -23,7 +23,7 @@ function ItemCost(props) {
         {props.money.amount}
       </span>
       <FontAwesomeIcon
-        icon={(props.money.income && faArrowDownLong) || faArrowDownLong}
+        icon={(props.money.income && faArrowUpLong) || faArrowDownLong}
         className="m-left-20"
       />
     </div>

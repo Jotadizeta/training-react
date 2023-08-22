@@ -1,15 +1,72 @@
+import {
+  faChampagneGlasses,
+  faSquare,
+  faBurger,
+  faGlassWater,
+  faArrowDownLong,
+  faArrowUpLong,
+  faBriefcase,
+  faCommentDollar,
+  faSackDollar,
+  faCab,
+  faCar,
+  faBoltLightning,
+} from "@fortawesome/free-solid-svg-icons";
 // import "./Expenses.css";
 import ItemIcon from "./items/ItemIcon";
 import ItemInfo from "./items/ItemInfo";
 import ItemCost from "./items/ItemCost";
-import { itemsList } from "../itemsDB/items";
+import { itemsList, classes } from "../itemsDB/items";
 import ItemContainer from "./wrappers/ItemContainer";
 import Wrapper from "./wrappers/Wrapper";
+import { useState, useEffect } from "react";
 
-function Expenses() {
+function Expenses(props) {
+  const [expenses, setNewExpenses] = useState(itemsList);
+
+  // let expense = {};
+
+  const getIcons = (category) => {
+    switch (category) {
+      case "incoming":
+        return [faSquare, faBriefcase];
+      case "transfer":
+        return [faSquare, faSackDollar];
+      case "car":
+        return [faSquare, faCar];
+      case "bizum":
+        return [faSquare, faCommentDollar];
+      case "bill":
+        return [faSquare, faChampagneGlasses];
+      case "electricity":
+        return [faSquare, faBoltLightning];
+
+      default:
+        break;
+    }
+  };
+
+  useEffect(() => {
+    if (Object.keys(props.onNewExpense).length > 0) {
+      const expense = {
+        icons: getIcons(props.onNewExpense.category),
+        classes: classes[props.onNewExpense.category],
+        data: {
+          title: props.onNewExpense.title,
+          date: new Date(Date.now()).toLocaleDateString(),
+        },
+        money: {
+          amount: props.onNewExpense.amount,
+          income: props.onNewExpense.isIncome,
+        },
+      };
+      setNewExpenses([...expenses, expense]);
+    }
+  }, [props.onNewExpense]);
+
   return (
     <Wrapper
-      content={itemsList.map((item, index) => {
+      content={expenses.map((item, index) => {
         return (
           <ItemContainer key={index}>
             <ItemIcon icons={item.icons} classes={item.classes} />

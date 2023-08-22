@@ -2,7 +2,7 @@ import "./InputExpenses.css";
 import Wrapper from "./wrappers/Wrapper";
 import { useState } from "react";
 
-function InputExpenses() {
+function InputExpenses(props) {
   const [expense, setNewExpense] = useState({
     title: "",
     amount: 0,
@@ -12,17 +12,24 @@ function InputExpenses() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("submitted");
+    // console.log(expense);
+    props.onSaveNewExpense(expense)
+    setNewExpense({
+      title: "",
+      amount: 0,
+      category: "incoming",
+      isIncome: false,
+    });
   };
 
   const hanleInputChange = (e) => {
     const target = e.target;
     const value = target.type === "checkbox" ? target.checked : target.value;
-    const name =target.name
+    const name = target.name;
 
     setNewExpense({
       ...expense,
-      [name]:value
+      [name]: value,
     });
   };
 
@@ -48,6 +55,8 @@ function InputExpenses() {
               <h3>Amount</h3>
             </label>
             <input
+              onChange={hanleInputChange}
+              value={expense.amount}
               type="number"
               name="amount"
               id="amount"
@@ -60,7 +69,11 @@ function InputExpenses() {
             <label htmlFor="category">
               <h3>Category</h3>
             </label>
-            <select name="category">
+            <select
+              name="category"
+              onChange={hanleInputChange}
+              value={expense.category}
+            >
               <option value="incoming">incoming</option>
               <option value="transfer">transfer</option>
               <option value="car">car</option>
@@ -73,7 +86,13 @@ function InputExpenses() {
             <label htmlFor="isIncome">
               <h3>Is Income</h3>
             </label>
-            <input type="checkbox" name="isIncome" id="isIncome" />
+            <input
+              type="checkbox"
+              name="isIncome"
+              id="isIncome"
+              onChange={hanleInputChange}
+              checked={expense.isIncome}
+            />
             <span className="checkmark" aria-hidden="true"></span>
           </div>
           <button>Add Record</button>
